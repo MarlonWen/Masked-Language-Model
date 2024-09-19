@@ -42,7 +42,7 @@ def main():
 
 def get_mask_token_index(mask_token_id, inputs):
     """
-    Return the index of the token with the specified `mask_token_id`, or
+    Returns the index of the token with the specified `mask_token_id`, or
     `None` if not present in the `inputs`.
     """
     # TODO: Implement this function
@@ -55,8 +55,8 @@ def get_mask_token_index(mask_token_id, inputs):
 
 def get_color_for_attention_score(attention_score):
     """
-    Return a tuple of three integers representing a shade of gray for the
-    given `attention_score`. Each value should be in the range [0, 255].
+    Returns a tuple of three integers representing a shade of gray for the
+    given `attention_score`
     """
     # TODO: Implement this function
     if attention_score == 0:
@@ -70,13 +70,7 @@ def get_color_for_attention_score(attention_score):
 
 def visualize_attentions(tokens, attentions):
     """
-    Produce a graphical representation of self-attention scores.
-
-    For each attention layer, one diagram should be generated for each
-    attention head in the layer. Each diagram should include the list of
-    `tokens` in the sentence. The filename for each diagram should
-    include both the layer number (starting count from 1) and head number
-    (starting count from 1).
+    Produces a graphical representation of self-attention scores.
     """
     # TODO: Update this function to produce diagrams for all layers and heads.
     for i, layer in enumerate(attentions):
@@ -91,13 +85,10 @@ def visualize_attentions(tokens, attentions):
 
 def generate_diagram(layer_number, head_number, tokens, attention_weights):
     """
-    Generate a diagram representing the self-attention scores for a single
+    Generates a diagram representing the self-attention scores for a single
     attention head. The diagram shows one row and column for each of the
     `tokens`, and cells are shaded based on `attention_weights`, with lighter
     cells corresponding to higher attention scores.
-
-    The diagram is saved with a filename that includes both the `layer_number`
-    and `head_number`.
     """
     # Create new image
     image_size = GRID_SIZE * len(tokens) + PIXELS_PER_WORD
